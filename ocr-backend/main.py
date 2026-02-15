@@ -332,15 +332,17 @@ def validate_licence_no(val: str) -> Tuple[str, float]:
     conf = 1.0
     
     # Most US licence numbers start with a letter. If OCR turned it into a digit,
-    # try to recover (e.g., '006314814' → likely was 'D06314814' or 'O06314814')
-    if result and result[0].isdigit():
+    # try to recover — but ONLY for longer values (7+ chars) where we expect
+    # a letter prefix. Short values like "92" should be kept as-is.
+    if result and result[0].isdigit() and len(result) >= 7:
         # Check if the rest is all digits — then the first char was likely a letter
         if result[1:].replace(' ', '').isdigit():
             fixed_char = LICENCE_FIRST_CHAR_FIXES.get(result[0], result[0])
             result = fixed_char + result[1:]
             conf = 0.7
     
-    if len(result) >= 5:
+    # Accept any length — licence numbers vary widely by state
+    if len(result) >= 1:
         return result, conf
     return result, 0.5
 
