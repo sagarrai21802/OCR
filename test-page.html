@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Current_Work.aspx - OCR AutoFill</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .doc-section {
+            background: #e3f2fd;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+            text-align: center;
+        }
+        .doc-section img {
+            max-width: 100%;
+            border: 1px solid #ccc;
+            background: #fff;
+        }
+        .form-section {
+            margin-top: 30px;
+            padding: 20px;
+            background: #fafafa;
+            border-radius: 4px;
+        }
+        .form-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        input[type="text"] {
+            flex: 1;
+            min-width: 200px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #4caf50;
+            box-shadow: 0 0 5px rgba(76,175,80,0.3);
+        }
+        .button {
+            background: linear-gradient(to right, #5F55D2, #201A64);
+            color: white;
+            padding: 14px 30px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        .button:hover {
+            opacity: 0.9;
+        }
+        .test-info {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        .field-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+            padding: 15px;
+            background: #f0f0f0;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 12px;
+        }
+        .field-item {
+            padding: 5px;
+            background: white;
+            border-radius: 3px;
+        }
+        .ocr-filled {
+            background-color: #e8f5e9 !important;
+            border: 2px solid #4caf50 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Current Work Load - Test Page</h1>
+        
+        <div class="test-info">
+            <strong>Test Information:</strong><br>
+            This page simulates the Current_Work.aspx structure for testing the OCR AutoFill extension.<br>
+            <strong>Image ID:</strong> ContentPlaceHolder1_Frame5<br>
+            <strong>Expected:</strong> Extension will detect the image and auto-fill the 16 fields below.
+        </div>
+
+        <div class="doc-section">
+            <h2>Document Preview</h2>
+            <p>Document image (ID: ContentPlaceHolder1_Frame5)</p>
+            <img src="https://via.placeholder.com/800x400/e3f2fd/333?text=Sample+Document+Image+for+OCR" 
+                 id="ContentPlaceHolder1_Frame5" 
+                 alt="Document">
+            <p style="font-size: 12px; color: #666;">Form No : 7</p>
+        </div>
+
+        <div class="form-section">
+            <h2>Data Entry Form</h2>
+            
+            <div class="form-row">
+                <input type="text" id="ContentPlaceHolder1_txtFName" placeholder="First Name" onselectstart="return false" onpaste="return false">
+                <input type="text" id="ContentPlaceHolder1_txtLName" placeholder="Last Name" onselectstart="return false" onpaste="return false">
+                <input type="text" id="ContentPlaceHolder1_txtEmail" placeholder="Email ID" onselectstart="return false" onpaste="return false">
+                <input type="text" id="ContentPlaceHolder1_txtSSN" placeholder="SSN" onselectstart="return false" onpaste="return false">
+            </div>
+
+            <div class="form-row">
+                <input type="text" id="ContentPlaceHolder1_txtPhone" placeholder="Phone No" onselectstart="return false" onpaste="return false">
+                <input type="text" id="ContentPlaceHolder1_txtBankName" placeholder="Bank name" onselectstart="return false" onpaste="return false">
+                <input type="text" id="ContentPlaceHolder1_txtAcNo" placeholder="A/C No" onselectstart="return false" onpaste="return false">
+                <input type="text" id="ContentPlaceHolder1_txtLoanAmt" placeholder="Loan Amount" onselectstart="return false" onpaste="return false">
+            </div>
+
+            <div class="form-row">
+                <input type="text" id="ContentPlaceHolder1_txtAddress" placeholder="Address" onselectstart="return false" onpaste="return false">
+                <input type="text" id="ContentPlaceHolder1_txtCity" placeholder="City" onselectstart="return false" onpaste="return false">
+                <input type="text" id="ContentPlaceHolder1_txtState" placeholder="State" onselectstart="return false" onpaste="return false">
+                <input type="text" id="ContentPlaceHolder1_txtZip" placeholder="Zip" onselectstart="return false" onpaste="return false">
+            </div>
+
+            <div class="form-row">
+                <input type="text" id="ContentPlaceHolder1_txtDob" placeholder="Date Of Birth(dd/MM/yyyy)" onselectstart="return false" onpaste="return false">
+                <input type="text" id="ContentPlaceHolder1_txtLicenceNo" placeholder="Licence No" onselectstart="return false" onpaste="return false">
+                <input type="text" id="ContentPlaceHolder1_txtLicenceState" placeholder="Licence State" onselectstart="return false" onpaste="return false">
+                <input type="text" id="ContentPlaceHolder1_txtIP" placeholder="IP" onselectstart="return false" onpaste="return false">
+            </div>
+
+            <div style="margin-top: 20px;">
+                <input type="submit" id="ContentPlaceHolder1_SV" value="Save" class="button">
+                <input type="submit" id="ContentPlaceHolder1_Button1" value="Submit" class="button">
+            </div>
+
+            <div style="margin-top: 10px; color: #201A64;" id="ContentPlaceHolder1_lblError"></div>
+        </div>
+
+        <div class="field-list">
+            <div class="field-item"><strong>Field ID:</strong> ContentPlaceHolder1_txtFName<br><strong>Type:</strong> First Name</div>
+            <div class="field-item"><strong>Field ID:</strong> ContentPlaceHolder1_txtLName<br><strong>Type:</strong> Last Name</div>
+            <div class="field-item"><strong>Field ID:</strong> ContentPlaceHolder1_txtEmail<br><strong>Type:</strong> Email</div>
+            <div class="field-item"><strong>Field ID:</strong> ContentPlaceHolder1_txtSSN<br><strong>Type:</strong> SSN</div>
+            <div class="field-item"><strong>Field ID:</strong> ContentPlaceHolder1_txtPhone<br><strong>Type:</strong> Phone</div>
+            <div class="field-item"><strong>Field ID:</strong> ContentPlaceHolder1_txtBankName<br><strong>Type:</strong> Bank Name</div>
+            <div class="field-item"><strong>Field ID:</strong> ContentPlaceHolder1_txtAcNo<br><strong>Type:</strong> Account No</div>
+            <div class="field-item"><strong>Field ID:</strong> ContentPlaceHolder1_txtLoanAmt<br><strong>Type:</strong> Loan Amount</div>
+            <div class="field-item"><strong>Field ID:</strong> ContentPlaceHolder1_txtAddress<br><strong>Type:</strong> Address</div>
+            <div class="field-item"><strong>Field ID:</strong> ContentPlaceHolder1_txtCity<br><strong>Type:</strong> City</div>
+            <div class="field-item"><strong>Field ID:</strong> ContentPlaceHolder1_txtState<br><strong>Type:</strong> State</div>
+            <div class="field-item"><strong>Field ID:</strong> ContentPlaceHolder1_txtZip<br><strong>Type:</strong> Zip</div>
+            <div class="field-item"><strong>Field ID:</strong> ContentPlaceHolder1_txtDob<br><strong>Type:</strong> DOB</div>
+            <div class="field-item"><strong>Field ID:</strong> ContentPlaceHolder1_txtLicenceNo<br><strong>Type:</strong> License No</div>
+            <div class="field-item"><strong>Field ID:</strong> ContentPlaceHolder1_txtLicenceState<br><strong>Type:</strong> License State</div>
+            <div class="field-item"><strong>Field ID:</strong> ContentPlaceHolder1_txtIP<br><strong>Type:</strong> IP</div>
+        </div>
+    </div>
+
+    <script>
+        console.log('Test page loaded');
+        console.log('Fields found:', document.querySelectorAll('input[type="text"]').length);
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            width: 300px;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .status {
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+            font-size: 12px;
+        }
+        .status.ready {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+        .field-list {
+            margin-top: 15px;
+            font-size: 11px;
+        }
+        .field-list ul {
+            padding-left: 20px;
+        }
+        .field-list li {
+            margin: 3px 0;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>OCR AutoFill Extension</h1>
+    <p>Automatically extracts data from documents and fills form fields.</p>
+    
+    <div class="status ready">
+        ✓ Extension is active and ready
+    </div>
+    
+    <div class="field-list">
+        <strong>Supported Fields (16):</strong>
+        <ul>
+            <li>First Name, Last Name, Email</li>
+            <li>SSN, Phone, DOB</li>
+            <li>Bank Name, Account No</li>
+            <li>Loan Amount, IP Address</li>
+            <li>Address, City, State, Zip</li>
+            <li>License No, License State</li>
+        </ul>
+    </div>
+    
+    <p style="font-size: 11px; color: #999; margin-top: 15px;">
+        Note: Fields are auto-filled for review. Manual submission required.
+    </p>
+</body>
+</html>
