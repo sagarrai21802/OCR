@@ -1,25 +1,36 @@
 {
   "manifest_version": 3,
   "name": "OCR AutoFill Extension",
-  "version": "1.0.0",
-  "description": "Automatically extracts data from JPG documents and fills ASP.NET WebForms fields",
+  "version": "2.2.0",
+  "description": "Standalone OCR - no backend required. Extracts data from JPG documents and fills ASP.NET WebForms fields.",
   "permissions": [
     "activeTab"
   ],
   "host_permissions": [
-    "<all_urls>"
+    "*://www.datavertixpropvtltd.com/*",
+    "*://tessdata.projectnaptha.com/*"
   ],
   "content_scripts": [
     {
       "matches": [
-        "*://*/*Current_Work.aspx*",
-        "*://www.datavertixpropvtltd.com/*"
+        "*://www.datavertixpropvtltd.com/*Current_Work.aspx*"
       ],
-      "js": ["content.js"],
+      "js": ["libs/tesseract.min.js", "content.js"],
       "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["libs/*"],
+      "matches": ["*://www.datavertixpropvtltd.com/*"]
     }
   ],
   "action": {
     "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
   }
 }
